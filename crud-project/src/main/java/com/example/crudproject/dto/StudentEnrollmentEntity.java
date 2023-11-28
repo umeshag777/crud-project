@@ -28,4 +28,8 @@ public class StudentEnrollmentEntity {
     @Column(name = "password")
     private String password;
 
+    @OneToOne(mappedBy = "studentEnrollmentEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "phone_number", referencedColumnName = "phone_number")
+    private StudentEnrollmentDataEntity studentEnrollmentDataEntity;
+
 }

@@ -15,8 +15,7 @@ public class StudentEnrollmentDataEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumns({@JoinColumn(name = "first_name", referencedColumnName = "first_name"),
-    @JoinColumn(name = "last_name", referencedColumnName = "last_name")})
+    @JoinColumn(name = "phone_number", referencedColumnName = "phone_number")
     private StudentEnrollmentEntity studentEnrollmentEntity;
 
     @Column(name = "sslc_percentage")

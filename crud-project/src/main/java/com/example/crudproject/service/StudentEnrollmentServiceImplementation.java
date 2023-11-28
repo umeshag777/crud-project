@@ -21,9 +21,7 @@ public class StudentEnrollmentServiceImplementation implements StudentEnrollment
         if(!isValidateMobileNumber(studentEnrollment.getPhoneNumber())){
             return "Invalid Mobile Number";
         }
-        // Convert StudentEnrollment to StudentEnrollmentEntity and save it
-        StudentEnrollment entity = new StudentEnrollment();
-        saveStudentEntity(entity);
+        saveStudentEntity(studentEnrollment);
         return "Registration Successful";
     }
 
@@ -71,5 +69,7 @@ public class StudentEnrollmentServiceImplementation implements StudentEnrollment
         entity.setLastName(studentEnrollment.getLastName());
         entity.setPhoneNumber(studentEnrollment.getPhoneNumber());
         entity.setPassword(studentEnrollment.getPassword());
+
+        studentEnrollmentRepository.save(entity);
     }
 }
